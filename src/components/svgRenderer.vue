@@ -17,6 +17,7 @@
           :d="linkPath(link)"
           :id="link.id"
           @click='emit("linkClick",[$event,link])'
+          @contextmenu='emit("nodeClick",[$event,node])'
           @touchstart.passive='emit("linkClick",[$event,link])'
           v-bind='linkAttrs(link)'
           :class='linkClass(link.id)'
@@ -32,6 +33,7 @@
           :width='getNodeSize(node, "width")'
           :height='getNodeSize(node, "height")'
           @click='emit("nodeClick",[$event,node])'
+          @contextmenu='emit("nodeClick",[$event,node])'
           @touchend.passive='emit("nodeClick",[$event,node])'
           @mousedown.prevent='emit("dragStart",[$event,key])'
           @touchstart.prevent='emit("dragStart",[$event,key])'
