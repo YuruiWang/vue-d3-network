@@ -32,7 +32,6 @@
           :width='getNodeSize(node, "width")'
           :height='getNodeSize(node, "height")'
           @contextmenu='emit("nodeClick",[$event,node])'
-          @click='test()'
           @touchend.passive='emit("nodeClick",[$event,node])'
           @mousedown.prevent='emit("dragStart",[$event,key])'
           @touchstart.prevent='emit("dragStart",[$event,key])'
@@ -49,7 +48,7 @@
         circle(v-else
         :key='key'
         :r="getNodeSize(node) / 2"
-        @click='emit("nodeClick",[$event,node])'
+        @contextmenu='emit("nodeClick",[$event,node])'
         @touchend.passive='emit("nodeClick",[$event,node])'
         @mousedown.prevent='emit("dragStart",[$event,key])'
         @touchstart.prevent='emit("dragStart",[$event,key])'
@@ -193,9 +192,6 @@ export default {
       let attrs = link._svgAttrs || {}
       attrs['stroke-width'] = attrs['stroke-width'] || this.linkWidth
       return attrs
-    },
-    test() {
-      alert('left click');
     }
   }
 }
