@@ -9,7 +9,7 @@
     "build": "npm run build-component && npm run clean-dist",
     "build-component": "vue-cli-service build --target lib --name vue-d3-network src/vue-d3-network.vue",
     "lint": "vue-cli-service lint",
-    "clean-dist": "rm dist/demo.html"
+    "clean-dist": "rimraf dist/demo.html"
   },
   "author": "emi",
   "license": "MIT",
