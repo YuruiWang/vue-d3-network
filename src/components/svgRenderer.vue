@@ -16,7 +16,7 @@
         path(v-for="link in links"
           :d="linkPath(link)"
           :id="link.id"
-          @click='emit("linkClick",[$event,link])'
+          @contextmenu='emit("linkClick",[$event,link])'
           @touchstart.passive='emit("linkClick",[$event,link])'
           v-bind='linkAttrs(link)'
           :class='linkClass(link.id)'
@@ -31,7 +31,7 @@
           :viewBox='svgIcon(node).attrs.viewBox'
           :width='getNodeSize(node, "width")'
           :height='getNodeSize(node, "height")'
-          @click='emit("nodeClick",[$event,node])'
+          @contextmenu='emit("nodeClick",[$event,node])'
           @touchend.passive='emit("nodeClick",[$event,node])'
           @mousedown.prevent='emit("dragStart",[$event,key])'
           @touchstart.prevent='emit("dragStart",[$event,key])'
@@ -48,7 +48,7 @@
         circle(v-else
         :key='key'
         :r="getNodeSize(node) / 2"
-        @click='emit("nodeClick",[$event,node])'
+        @contextmenu='emit("nodeClick",[$event,node])'
         @touchend.passive='emit("nodeClick",[$event,node])'
         @mousedown.prevent='emit("dragStart",[$event,key])'
         @touchstart.prevent='emit("dragStart",[$event,key])'

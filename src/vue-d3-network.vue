@@ -360,9 +360,11 @@ export default {
     },
     // -- Render helpers
     nodeClick (event, node) {
+      event.preventDefault()
       this.$emit('node-click', event, node)
     },
     linkClick (event, link) {
+      event.preventDefault()
       this.$emit('link-click', event, link)
     },
     setMouseOffset (event, node) {
